@@ -132,3 +132,4 @@ resource "aws_route_table_association" "pvt_tbl_assoc2" {
   subnet_id      = aws_subnet.pvt2.id
   route_table_id = aws_route_table.routetblpvt2.id
 }
+
