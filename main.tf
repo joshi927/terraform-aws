@@ -2,7 +2,7 @@ resource "aws_vpc" "vpcnew" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-   Name = "vpcnew"
+    Name = "vpcnew"
   }
 }
 
@@ -70,11 +70,11 @@ resource "aws_nat_gateway" "natgw2" {
 
 
 resource "aws_eip" "nateip1" {
-  vpc      = true
+  vpc = true
 }
 
 resource "aws_eip" "nateip2" {
-  vpc      = true
+  vpc = true
 }
 
 resource "aws_route_table" "routetblpub" {
@@ -93,7 +93,7 @@ resource "aws_route_table" "routetblpvt1" {
   vpc_id = aws_vpc.vpcnew.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.natgw1.id
   }
   tags = {
@@ -105,7 +105,7 @@ resource "aws_route_table" "routetblpvt2" {
   vpc_id = aws_vpc.vpcnew.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.natgw2.id
   }
   tags = {
